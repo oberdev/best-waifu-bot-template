@@ -1,6 +1,6 @@
 import axios, { AxiosRequestConfig } from 'axios';
 
-export default async function loadImage(imgUrl: string) {
+export default async function getImageStream(imgUrl: string) {
     const options: AxiosRequestConfig = {
         url: imgUrl,
         method: 'GET',
