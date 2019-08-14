@@ -6,7 +6,8 @@
     "scripts": {
         "start": "node --inspect=5858 -r ts-node/register ./src/index.ts",
         "start:watch": "nodemon",
-        "build": "tsc"
+        "build": "tsc",
+        "production": "npm run build && node dist/index.js"
     },
     "keywords": [],
     "author": "",
