@@ -17,8 +17,10 @@ setInterval(async () => {
 
     if (!hours || hours < getHoursFromStart()) {
         const { illusts } = await pixiv.searchIllust(word);
-        const buffer = await getImageStream(illusts[0].imageUrls.large);
-        bot.sendPhoto(process.env.TELEGRAM_CHANNEL, buffer);
+        for (const illust of illusts) {
+            const buffer = await getImageStream(illust.imageUrls.large);
+            await bot.sendPhoto(process.env.TELEGRAM_CHANNEL, buffer);
+        }
         hours = getHoursFromStart();
     }
 }, 3000);
